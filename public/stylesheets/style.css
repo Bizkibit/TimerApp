@@ -1,0 +1,27 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#timer p {
+  color: red;
+  font-size: 20px;
+}
+
+.start {
+  background-color: lightblue;
+}
+
+.stop {
+  background-color: red;
+  display: none;
+}
+
+.restart  {
+  background-color: orange;
+  display: none;
+}
