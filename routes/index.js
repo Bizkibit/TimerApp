@@ -1,13 +1,17 @@
 var express = require('express');
 var router = express.Router();
 
-let timer = require("../controller/timerController")
+let {time_get, time_post} = require("../controller/timerController")
 
 /* GET home page. */
-router.get('/', timer.time_get);
+router.get('/', function(req, res, next)  {
+  console.log("but why?");
+  next();
+},
+time_get);
 
 router.post('/', function(req, res) {
   console.log("wtf")
-}, timer.time_post);
+}, time_post);
 
 module.exports = router;
