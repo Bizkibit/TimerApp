@@ -60,7 +60,7 @@ function renderTimes(times) {
   let topScores = document.querySelector('.topScores');
   let timesHTML = times.map(time => {
     return `
-      <li>Score time = ${time.current_time} <li>
+      <li>Score time = ${time.current_time} </li>
     `
   }).join('')
   topScores.innerHTML = timesHTML;
