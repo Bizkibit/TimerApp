@@ -9,7 +9,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       current_time: {
-        type: Sequelize.FLOAT
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

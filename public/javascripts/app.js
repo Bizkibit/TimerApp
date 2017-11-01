@@ -14,7 +14,7 @@ window.onload = function()  {
   let session;
 
   start.addEventListener("click", () => {
-    session = setInterval(()=>{timerDisplay.textContent = `${time++}`, 500});
+    session = setInterval(()=>{timerDisplay.textContent = `${time++/100}`, 500});
     start.style.display = "none";
     stop.style.display = "inline-block";
 
@@ -23,8 +23,10 @@ window.onload = function()  {
       timerDisplay.textContent= "0";
       restart.style.display = "none";
       start.style.display = "inline-block";
-      // timer.create({current_time: time})
-      // .then(timer => console.log(timer));
+      // fetch("/", {
+      //   method: "POST",
+      //   body: {current_time: time}
+      // })
       createTime({current_time: time});
       time = 0;
 
@@ -41,7 +43,7 @@ window.onload = function()  {
 
 function createTime ({current_time})  {
   const fData = new FormData();
-  
+
   fData.set('current_time', current_time);
   return fetch('/', {
   method: 'POST',

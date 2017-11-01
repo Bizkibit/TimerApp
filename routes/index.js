@@ -4,14 +4,16 @@ var router = express.Router();
 let {time_get, time_post} = require("../controller/timerController")
 
 /* GET home page. */
+router.post('/', function(req, res, next) {
+  console.log("inside post router");
+  next();
+}, time_post);
+
 router.get('/', function(req, res, next)  {
-  console.log("but why?");
+  console.log("inside get router");
   next();
 },
 time_get);
 
-router.post('/', function(req, res) {
-  console.log("wtf")
-}, time_post);
 
 module.exports = router;

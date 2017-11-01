@@ -1,4 +1,4 @@
-let time = require("../models/time")
+let {Time} = require("../models")
 
 // exports.time_post = function(req, res, next) {
 //   let current_time = req.body.current_time;
@@ -18,12 +18,14 @@ module.exports = {
    time_post (req, res, next)  {
     console.log("inside time post")
     let {current_time} = req.body;
+    current_time = parseInt(current_time);
 
-    return time.create({current_time})
-    .then(current_time => res.status(201).send(current_time))
+    return Time.create({current_time})
+    .then(current_time => res.status(201).redirect("/"))
     // .catch(error => res.status(400).send(error));
       // .then(current_time => res.status(201).send(current_time))
-    .then(res => res.redirect("/"))
+    // .then(res => res.redirect("/"))
+    .catch(error => res.status(400).send(error));
   },
 
   time_get (req, res) {
