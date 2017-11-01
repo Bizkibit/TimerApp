@@ -28,6 +28,7 @@ window.onload = function()  {
       //   body: {current_time: time}
       // })
       createTime({current_time: time});
+      getTimes().then(renderTimes);
       time = 0;
 
     })
@@ -50,3 +51,19 @@ function createTime ({current_time})  {
   body: fData
   });
 }
+
+function getTimes() {
+  return fetch('/scoreGet').then(res => res.json());
+}
+
+function renderTimes(times) {
+  let topScores = document.querySelector('.topScores');
+  let timesHTML = times.map(time => {
+    return `
+      <li>Score time = ${time.current_time} <li>
+    `
+  }).join('')
+  topScores.innerHTML = timesHTML;
+}
+
+getTimes().then(renderTimes);

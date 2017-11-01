@@ -25,11 +25,21 @@ module.exports = {
     // .catch(error => res.status(400).send(error));
       // .then(current_time => res.status(201).send(current_time))
     // .then(res => res.redirect("/"))
-    .catch(error => res.status(400).send(error));
+    // .catch(error => res.status(400).send(error));
   },
 
-  time_get (req, res) {
+  time_get (req, res, next) {
     console.log("inside time_get");
     res.render('index', {title: "Timer"});
+  },
+
+  async scoreGet (req, res, next) {
+    console.log('inside scoreGet');
+    try {
+      let topScores = await Time.findAll({order: [['current_time', 'DESC']], limit: 3});
+      res.json(topScores);
+    } catch (e) {
+      res.json(e)
+    }
   }
 }

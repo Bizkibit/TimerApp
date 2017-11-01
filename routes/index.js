@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-let {time_get, time_post} = require("../controller/timerController")
+let {time_get, time_post, scoreGet} = require("../controller/timerController")
 
 /* GET home page. */
 router.post('/', function(req, res, next) {
@@ -14,6 +14,8 @@ router.get('/', function(req, res, next)  {
   next();
 },
 time_get);
+
+router.get('/scoreGet', scoreGet)
 
 
 module.exports = router;

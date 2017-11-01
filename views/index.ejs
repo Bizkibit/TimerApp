@@ -1,9 +1,16 @@
-<%- include('./partials/header') %>;
+<%- include('./partials/header') %>
   <h1><%= title %></h1>
   <p>Welcome to <%= title %></p>
   <div id="timer">
     <p>0</p>
-    <button class="start"><span>Start!</span></button>
-    <button class="stop"><span>Stop</span></button>
-    <button class="restart"><span>restart</span></button>
+    <button class="start">Start!</button>
+    <button class="stop">Stop</button>
+    <button class="restart">restart</button>
+  </div>
+  <div class="scoreboard">
+    <h2>Top Scores</h2>
+    <ol class="topScores">
+
+    </ol>
+  </div>
 <%- include('./partials/footer') %>
