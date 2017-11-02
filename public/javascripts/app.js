@@ -20,7 +20,7 @@ window.onload = function()  {
 
     restart.addEventListener("click", (e) => {
 
-      timerDisplay.textContent= "0";
+      timerDisplay.textContent= "0.00";
       restart.style.display = "none";
       start.style.display = "inline-block";
       // fetch("/", {
@@ -60,7 +60,7 @@ function renderTimes(times) {
   let topScores = document.querySelector('.topScores');
   let timesHTML = times.map(time => {
     return `
-      <li>Score time = ${time.current_time} </li>
+      <li>Score time = ${time.current_time/100} </li>
     `
   }).join('')
   topScores.innerHTML = timesHTML;

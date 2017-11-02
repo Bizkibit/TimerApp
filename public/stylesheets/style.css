@@ -1,15 +1,37 @@
 body {
-  padding: 50px;
+  /*padding: 50px;*/
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: flex;
+  margin: 10% auto;
+  box-sizing: border-box;
+  /*align-items: center;*/
+  /*padding: 200px auto;*/
+  justify-content: center;
+
 }
 
 a {
   color: #00B7FF;
 }
 
+.main {
+  /*align-self: right;*/
+  text-align: center;
+  border-style: groove;
+  border-color: black;
+  border-width: thick;
+  background-color: #c9d6ea;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  box-sizing: border-box;
+  width: 500px;
+}
+
 #timer p {
-  color: red;
+  color: green;
   font-size: 20px;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .start {
@@ -24,4 +46,8 @@ a {
 .restart  {
   background-color: orange;
   display: none;
+}
+
+ol  {
+  display: inline-block;
 }
